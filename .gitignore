@@ -143,5 +143,4 @@ yarn-error.log*
 
 /fout
 
-hosting.**
-
+.firebase
