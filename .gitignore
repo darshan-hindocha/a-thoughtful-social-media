@@ -141,3 +141,7 @@ yarn-error.log*
 # vercel
 .vercel
 
+/fout
+
+hosting.**
+
