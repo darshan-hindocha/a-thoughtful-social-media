@@ -10,18 +10,14 @@ on:
       - main
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+  build_and_preview:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
+      - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          action: "upload"
-          app_location: "/frontend"
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CREDIT_B8D5F }}'
           projectId: credit-b8d5f
