@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -5,6 +9,31 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+@layer base {
+  h1 {
+    @apply font-montserrat text-h1Mobile lg:text-h1Desktop;
+  }
+
+  h2 {
+    @apply font-montserrat text-h2Mobile lg:text-h2Desktop;
+  }
+
+  h3 {
+    @apply font-montserrat text-h3Mobile lg:text-h3Desktop;
+  }
+
+  h4 {
+    @apply font-montserrat text-h4Mobile lg:text-h4Desktop;
+  }
+
+  p {
+    @apply font-montserrat text-baseMobile lg:text-baseDesktop;
+  }
+}
+
+#__next {
+}
+
 
 a {
   color: inherit;
